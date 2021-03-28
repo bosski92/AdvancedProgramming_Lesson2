@@ -1,0 +1,45 @@
+﻿@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Program> Localizer
+@model AdvancedProgramming_Lesson2.Models.Series
+
+@{ ViewData["Title"] = @Localizer["Delete"]; }
+
+
+
+<h3>@Localizer["Delete sure"]</h3>
+<div>
+    <h4> @Localizer["Series"]</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Localizer["Title"]
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Localizer["ReleaseDate"]
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Localizer["Genre"]
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+        <dt class="col-sm-2">
+            @Localizer["Rating"]
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value=@Localizer["Delete"] class="btn btn-danger" /> |
+        <a asp-action="Index">@Localizer["Back"]</a>
+    </form>
+</div>

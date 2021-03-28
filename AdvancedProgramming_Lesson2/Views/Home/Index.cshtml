@@ -1,0 +1,9 @@
+﻿@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Program> Localizer
+
+@{ ViewData["Title"] = "AdvancedProgramming_Lesson2 główna"; }
+
+<div class="text-center">
+    <h1 class="display-4">@Localizer["Welcome"]</h1>
+    <p>@Localizer["Learn"]<a href="https://docs.microsoft.com/aspnet/core">ASP.NET Core</a></p>
+</div>
